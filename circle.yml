@@ -1,0 +1,20 @@
+general:
+  artifacts:
+    - "app.tar.gz"
+
+machine:
+  node:
+    version: 4.4.3
+
+dependencies:
+  override:
+    - NPM_CONFIG_PROGRESS="false" npm install
+  cache_directories:
+    - "node_modules"
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - chmod +x deploy.sh
+      - ./deploy.sh "status.innovadiv.com"
