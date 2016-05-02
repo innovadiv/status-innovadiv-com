@@ -14,4 +14,4 @@ scpEndpoint="$endpoint:app.tar.gz"
 
 tar -zcf app.tar.gz src node_modules
 scp app.tar.gz $scpEndpoint
-ssh $endpoint "forever stopall && rm -rf /opt/app && tar -xf app.tar.gz -C /opt && rm app.tar.gz && cd /opt && sh start.sh"
+ssh $endpoint "forever stopall && rm -rf /opt/app && mkdir /opt/app && tar -xf app.tar.gz -C /opt/app && rm app.tar.gz && cd /opt && sh start.sh"
