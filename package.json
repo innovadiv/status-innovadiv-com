@@ -4,7 +4,7 @@
   "description": "An independent public monitoring service that runs on Google Cloud.",
   "main": "index.js",
   "scripts": {
-    "build": "cp -r src build && babel build -d build",
+    "build": "rm -rf build && cp -r src build && babel build -d build",
     "start": "node src/server.js",
     "test": "exit 0"
   },
