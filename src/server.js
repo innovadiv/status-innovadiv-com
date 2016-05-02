@@ -1,5 +1,7 @@
-const app = require('express')();
-const swig = require('swig');
+import express from 'express';
+import swig from 'swig';
+
+export const app = express();
 
 const env = process.env.NODE_ENV || '';
 const envIsProd = env === 'production';
@@ -19,8 +21,13 @@ swig.setDefaults({cache: swigCache});
 // NOTE: You should always cache templates in a production environment.
 // Don't leave both of these to `false` in production!
 
+// asset dir
+app.use('/assets', express.static(`${__dirname}/assets`));
+
 app.get('/', function (req, res) {
-  res.render('index.swig', { /* template locals context */ });
+  res.render('index.swig', {
+    date: new Date
+  });
 });
 
 app.listen(8124);
