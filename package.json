@@ -1,7 +1,7 @@
 {
   "name": "status-innovadiv-com",
   "version": "1.0.0",
-  "description": "An independent service monitoring layer that runs on Google Cloud.",
+  "description": "An independent public monitoring service that runs on Google Cloud.",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
